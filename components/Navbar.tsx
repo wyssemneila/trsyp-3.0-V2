@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
@@ -17,15 +18,17 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar">
-        {/* Logo */}
         <a className="navbar-logo" href="/">
-          <div className="navbar-logo-text">
-            <span className="navbar-logo-title">IEEE Tunisian RAS</span>
-            <span className="navbar-logo-sub">TRSYP 3.0</span>
-          </div>
+          <Image
+            src="/trsyp-logo.png"
+            alt="TRSYP 3.0"
+            width={140}
+            height={48}
+            priority
+            style={{ height: '42px', width: 'auto', objectFit: 'contain' }}
+          />
         </a>
 
-        {/* Desktop links */}
         <ul className="navbar-links">
           {NAV_LINKS.map((l) => (
             <li key={l.label}>
@@ -34,12 +37,10 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
         <a className="navbar-register" href="#register">
           Register Now
         </a>
 
-        {/* Hamburger */}
         <button
           className="navbar-hamburger"
           onClick={() => setOpen((p) => !p)}
@@ -51,7 +52,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile overlay menu */}
       <div className={`navbar-mobile-menu ${open ? 'open' : ''}`}>
         {NAV_LINKS.map((l) => (
           <a key={l.label} href={l.href} onClick={() => setOpen(false)}>
