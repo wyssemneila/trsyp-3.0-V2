@@ -1,23 +1,39 @@
 import Image from 'next/image';
+import MatrixText from './MatrixText';
 
 export default function ThemeSection() {
   return (
     <section className="theme-section" id="our-theme">
-      <Image
-        className="theme-banner-img"
-        src="/banner.png"
-        alt="Human and robot facing each other — Human-Robot Symbiosis"
-        fill
-        style={{ objectFit: 'cover', objectPosition: 'center' }}
-        priority={false}
-      />
-      <div className="theme-overlay" />
-      <div className="theme-content">
+      {/* Label sits ABOVE the banner */}
+      <div className="theme-pre-header">
+        <span className="theme-pre-line" />
         <span className="theme-label">Our Theme</span>
-        <div className="theme-dash" />
-        <h2 className="theme-title">
-          Human<em>–</em>Robot Symbiosis
-        </h2>
+        <span className="theme-pre-line" />
+      </div>
+
+      {/* Banner image container */}
+      <div className="theme-banner-wrap">
+        <Image
+          className="theme-banner-img"
+          src="/banner.png"
+          alt="Human and robot facing each other — Human-Robot Symbiosis"
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          priority={false}
+        />
+        <div className="theme-overlay" />
+
+        <div className="theme-content">
+          <div className="theme-dash" />
+          <h2 className="theme-title">
+            <span className="theme-title-line">
+              <MatrixText text="Human–Robot" />
+            </span>
+            <span className="theme-title-line theme-title-accent">
+              <MatrixText text="Symbiosis" pauseMs={2600} />
+            </span>
+          </h2>
+        </div>
       </div>
     </section>
   );
