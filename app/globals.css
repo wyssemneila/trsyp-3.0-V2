@@ -316,12 +316,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ═══════════════════════════════════════════════════════
-   ABOUT SECTION — Redesigned
+   ABOUT SECTION — Compact above-the-fold layout
 ═══════════════════════════════════════════════════════ */
 .about {
   position: relative;
   background: #010008;
-  padding: clamp(80px, 10vw, 140px) clamp(24px, 5vw, 72px);
+  padding: 48px clamp(24px, 4vw, 64px) 40px;
   overflow: hidden;
 }
 
@@ -330,9 +330,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0,232,122,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,232,122,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(0,232,122,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,232,122,0.025) 1px, transparent 1px);
+  background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 70%);
   pointer-events: none;
@@ -340,56 +340,56 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .ab-glow-green {
   position: absolute;
-  width: clamp(400px, 50vw, 700px);
-  height: clamp(400px, 50vw, 700px);
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,232,122,0.10) 0%, transparent 70%);
-  right: -10%;
-  top: 20%;
+  background: radial-gradient(circle, rgba(0,232,122,0.08) 0%, transparent 70%);
+  right: -8%;
+  top: 10%;
   animation: ab-float1 12s ease-in-out infinite;
   pointer-events: none;
 }
 
 .ab-glow-pink {
   position: absolute;
-  width: clamp(300px, 40vw, 550px);
-  height: clamp(300px, 40vw, 550px);
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,29,120,0.07) 0%, transparent 70%);
-  left: -8%;
-  bottom: -10%;
+  background: radial-gradient(circle, rgba(255,29,120,0.06) 0%, transparent 70%);
+  left: -6%;
+  bottom: -15%;
   animation: ab-float2 15s ease-in-out infinite;
   pointer-events: none;
 }
 
 @keyframes ab-float1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-30px, 20px) scale(1.08); }
+  50% { transform: translate(-20px, 15px) scale(1.06); }
 }
 
 @keyframes ab-float2 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(20px, -30px) scale(1.1); }
+  50% { transform: translate(15px, -20px) scale(1.08); }
 }
 
 /* ── Corner frame accents ── */
 .ab-corner {
   position: absolute;
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
   pointer-events: none;
 }
 
 .ab-corner--tl {
-  top: clamp(20px, 2.5vw, 40px);
-  left: clamp(20px, 2.5vw, 40px);
+  top: 20px;
+  left: 20px;
   border-top: 1.5px solid rgba(0,232,122,0.3);
   border-left: 1.5px solid rgba(0,232,122,0.3);
 }
 
 .ab-corner--br {
-  bottom: clamp(20px, 2.5vw, 40px);
-  right: clamp(20px, 2.5vw, 40px);
+  bottom: 20px;
+  right: 20px;
   border-bottom: 1.5px solid rgba(255,29,120,0.3);
   border-right: 1.5px solid rgba(255,29,120,0.3);
 }
@@ -405,32 +405,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .ab-eyebrow {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: clamp(48px, 6vw, 72px);
+  gap: 12px;
+  margin-bottom: 28px;
 }
 
 .ab-eyebrow-line {
-  width: 48px;
+  width: 36px;
   height: 1px;
   background: linear-gradient(90deg, var(--color-green), transparent);
 }
 
 .ab-eyebrow-text {
   font-family: var(--font-heading);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--color-green);
 }
 
-/* ── Two-column hero grid ── */
+/* ── Main layout: left title | right content+stats ── */
 .ab-hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 6vw, 80px);
+  grid-template-columns: 280px 1fr;
+  gap: clamp(32px, 4vw, 64px);
   align-items: start;
-  margin-bottom: clamp(64px, 8vw, 100px);
 }
 
 /* Left — Title column */
@@ -440,21 +439,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .ab-vline-accent {
   position: absolute;
-  left: -32px;
+  left: -20px;
   top: 0;
   width: 2px;
-  height: 180px;
+  height: 120px;
   background: linear-gradient(180deg, var(--color-green), rgba(0,232,122,0.1), transparent);
 }
 
 .ab-main-title {
   font-family: var(--font-heading);
-  font-size: clamp(48px, 6vw, 72px);
+  font-size: clamp(36px, 4vw, 52px);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: #ededed;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .ab-title-accent {
@@ -463,27 +462,26 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(54px, 7vw, 80px);
+  font-size: clamp(42px, 5vw, 60px);
 }
 
 .ab-edition {
   font-family: var(--font-heading);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   color: rgba(0,232,122,0.4);
-  margin-top: 16px;
-  margin-bottom: 28px;
+  margin-top: 10px;
+  margin-bottom: 16px;
 }
 
 .ab-tagline {
   font-family: var(--font-body);
-  font-size: clamp(16px, 1.6vw, 22px);
+  font-size: clamp(13px, 1.1vw, 15px);
   font-weight: 300;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.6);
-  max-width: 420px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.55);
 }
 
 .ab-tagline-hl {
@@ -491,17 +489,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 500;
 }
 
-/* Right — Description + Pillars */
+/* Right — Description + Pillars + Stats all together */
 .ab-desc-col {
-  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .ab-desc-text {
   font-family: var(--font-body);
-  font-size: clamp(14px, 1.1vw, 16px);
-  line-height: 1.85;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 40px;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.45);
 }
 
 .ab-desc-text strong {
@@ -511,33 +510,33 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ── Vision pillars ── */
 .ab-pillars {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 .ab-pillar {
   display: flex;
   align-items: flex-start;
-  gap: 18px;
-  padding: 22px;
-  border-radius: 14px;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 10px;
   background: rgba(0,232,122,0.02);
-  border: 1px solid rgba(0,232,122,0.06);
-  transition: all 0.3s ease;
+  border: 1px solid rgba(0,232,122,0.07);
+  transition: all 0.25s ease;
 }
 
 .ab-pillar:hover {
   background: rgba(0,232,122,0.05);
-  border-color: rgba(0,232,122,0.15);
-  transform: translateX(4px);
+  border-color: rgba(0,232,122,0.16);
+  transform: translateY(-2px);
 }
 
 .ab-pillar-icon {
   flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -546,53 +545,52 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .ab-pillar-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   color: var(--color-green);
 }
 
 .ab-pillar-title {
   font-family: var(--font-heading);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #ededed;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .ab-pillar-desc {
   font-family: var(--font-body);
-  font-size: 13px;
-  line-height: 1.65;
-  color: rgba(255,255,255,0.38);
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.35);
 }
 
 /* ── Divider line ── */
 .ab-divider {
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,29,120,0.3), rgba(0,232,122,0.3), transparent);
-  margin-bottom: clamp(48px, 6vw, 80px);
+  background: linear-gradient(90deg, transparent, rgba(255,29,120,0.25), rgba(0,232,122,0.25), transparent);
 }
 
-/* ── Stats ribbon ── */
+/* ── Stats ribbon — compact horizontal strip ── */
 .ab-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  background: rgba(0,232,122,0.06);
-  border-radius: 16px;
+  background: rgba(0,232,122,0.05);
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(0,232,122,0.06);
+  border: 1px solid rgba(0,232,122,0.07);
 }
 
 .ab-stat-card {
   position: relative;
-  padding: clamp(32px, 4vw, 48px) 24px;
+  padding: 18px 12px;
   background: rgba(1, 0, 8, 0.92);
   text-align: center;
-  transition: background 0.3s ease;
+  transition: background 0.25s ease;
 }
 
 .ab-stat-card:hover {
@@ -601,7 +599,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .ab-stat-num {
   font-family: var(--font-heading);
-  font-size: clamp(36px, 4vw, 52px);
+  font-size: clamp(22px, 2.5vw, 32px);
   font-weight: 800;
   letter-spacing: -0.02em;
   background: linear-gradient(180deg, var(--color-green) 0%, #00cc6a 100%);
@@ -609,25 +607,107 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .ab-stat-label {
   font-family: var(--font-heading);
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.28);
 }
 
 .ab-stat-sep {
   position: absolute;
   right: 0;
-  top: 25%;
-  height: 50%;
+  top: 20%;
+  height: 60%;
   width: 1px;
-  background: linear-gradient(180deg, transparent, rgba(0,232,122,0.15), transparent);
+  background: linear-gradient(180deg, transparent, rgba(0,232,122,0.12), transparent);
+}
+
+/* ═══════════════════════════════════════════════════════
+   OUR THEME SECTION
+═══════════════════════════════════════════════════════ */
+.theme-section {
+  position: relative;
+  width: 100%;
+  height: clamp(320px, 40vw, 520px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-banner-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.theme-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(1,0,8,0.35) 0%,
+    rgba(1,0,8,0.15) 40%,
+    rgba(1,0,8,0.15) 60%,
+    rgba(1,0,8,0.35) 100%
+  );
+  z-index: 1;
+}
+
+.theme-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.theme-label {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+.theme-title {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #fff;
+  line-height: 1;
+  text-shadow:
+    0 0 40px rgba(0,232,122,0.5),
+    0 0 80px rgba(0,232,122,0.2);
+}
+
+.theme-title em {
+  font-style: normal;
+  background: linear-gradient(120deg, var(--color-green) 0%, #fff 50%, var(--color-pink) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme-dash {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-green), var(--color-pink));
+  border-radius: 2px;
 }
 
 /* ─── RESPONSIVE ──────────────────────────────────────── */
@@ -653,14 +733,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     font-size: clamp(9px, 3.2vw, 12px);
   }
 
-  /* About — mobile */
+  /* About — tablet */
   .ab-hero-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
 
   .ab-vline-accent {
     display: none;
+  }
+
+  .ab-pillars {
+    grid-template-columns: 1fr;
   }
 
   .ab-stats {
@@ -668,23 +752,36 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
 
   .ab-corner {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Theme section — tablet */
+  .theme-title {
+    font-size: clamp(24px, 5vw, 40px);
   }
 }
 
 @media (max-width: 600px) {
-  .hero-tagline {
-    font-size: clamp(9px, 3.2vw, 12px);
+  .about {
+    padding: 36px 20px 32px;
+  }
+
+  .ab-pillars {
+    grid-template-columns: 1fr;
   }
 
   .ab-stats {
     grid-template-columns: 1fr 1fr;
-    border-radius: 12px;
+    border-radius: 10px;
   }
 
   .ab-stat-card {
-    padding: 28px 16px;
+    padding: 14px 10px;
+  }
+
+  .theme-section {
+    height: clamp(220px, 60vw, 360px);
   }
 }
 
