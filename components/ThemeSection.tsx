@@ -15,7 +15,7 @@ export default function ThemeSection() {
       <div className="theme-banner-wrap">
         <Image
           className="theme-banner-img"
-          src="/banner.png"
+          src="/b.png"
           alt="Human and robot facing each other — Human-Robot Symbiosis"
           fill
           style={{ objectFit: 'cover', objectPosition: 'center' }}

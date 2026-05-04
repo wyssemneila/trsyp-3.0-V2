@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ThemeSection from '@/components/ThemeSection';
 import WhyJoinSection from '@/components/WhyJoinSection';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <ThemeSection />
         <WhyJoinSection />
       </main>
+      <Footer />
     </>
   );
 }
