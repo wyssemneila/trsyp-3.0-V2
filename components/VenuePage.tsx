@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const TUNISIA_PLACES = [
   { name: 'Sidi Bou Said', desc: 'Iconic blue & white clifftop village' },
@@ -140,24 +141,13 @@ export default function VenuePage() {
             transition={{ duration: 0.5 }}
           >
             <div className="venue-hotel-img">
-              <div className="venue-hotel-placeholder">
-                <svg viewBox="0 0 120 80" fill="none" stroke="currentColor" strokeWidth="1">
-                  <rect x="10" y="20" width="100" height="50" rx="4" />
-                  <rect x="20" y="30" width="12" height="12" rx="1" />
-                  <rect x="38" y="30" width="12" height="12" rx="1" />
-                  <rect x="56" y="30" width="12" height="12" rx="1" />
-                  <rect x="74" y="30" width="12" height="12" rx="1" />
-                  <rect x="92" y="30" width="12" height="12" rx="1" />
-                  <rect x="20" y="48" width="12" height="12" rx="1" />
-                  <rect x="38" y="48" width="12" height="12" rx="1" />
-                  <rect x="56" y="48" width="12" height="12" rx="1" />
-                  <rect x="74" y="48" width="12" height="12" rx="1" />
-                  <rect x="92" y="48" width="12" height="12" rx="1" />
-                  <path d="M50 70h20v10H50z" />
-                  <path d="M55 10h10v10H55z" />
-                </svg>
-                <span>Hotel Photo</span>
-              </div>
+              <Image
+                src="/aaa.jpg"
+                alt="TRSYP 3.0 Host Venue"
+                width={800}
+                height={500}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '20px 0 0 20px' }}
+              />
             </div>
             <div className="venue-hotel-info">
               <span className="venue-hotel-badge">TRSYP 3.0 HOST VENUE</span>
@@ -237,11 +227,13 @@ export default function VenuePage() {
               {[...TUNISIA_PLACES, ...TUNISIA_PLACES].map((p, i) => (
                 <div key={i} className="venue-place-card">
                   <div className="venue-place-img">
-                    <svg viewBox="0 0 60 40" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.4">
-                      <rect x="5" y="5" width="50" height="30" rx="2" />
-                      <circle cx="20" cy="18" r="5" />
-                      <path d="M5 30l15-10 10 6 15-12 10 8" />
-                    </svg>
+                    <Image
+                      src="/aaa.jpg"
+                      alt={p.name}
+                      width={400}
+                      height={260}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px 12px 0 0' }}
+                    />
                   </div>
                   <h4>{p.name}</h4>
                   <p>{p.desc}</p>

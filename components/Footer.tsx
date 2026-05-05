@@ -23,18 +23,18 @@ export default function Footer() {
           <div className="footer-links-grid">
             <div className="footer-col">
               <h4 className="footer-col-title">Navigate</h4>
-              <a href="#about" className="footer-link">About</a>
-              <a href="#our-theme" className="footer-link">Our Theme</a>
-              <a href="#why-join" className="footer-link">Why Join</a>
-              <a href="#partners" className="footer-link">Partners</a>
+              <a href="/" className="footer-link">Home</a>
+              <a href="/program" className="footer-link">Program</a>
+              <a href="/challenge" className="footer-link">Challenge</a>
+              <a href="/venue" className="footer-link">Venue</a>
+              <a href="/about" className="footer-link">About Us</a>
             </div>
 
             <div className="footer-col">
-              <h4 className="footer-col-title">Program</h4>
-              <a href="#" className="footer-link">Schedule</a>
-              <a href="#" className="footer-link">Speakers</a>
-              <a href="#" className="footer-link">Competitions</a>
-              <a href="#" className="footer-link">Workshops</a>
+              <h4 className="footer-col-title">Event</h4>
+              <a href="/program" className="footer-link">Schedule</a>
+              <a href="/venue" className="footer-link">Location</a>
+              <a href="/challenge" className="footer-link">Competitions</a>
             </div>
 
             <div className="footer-col">
@@ -50,10 +50,10 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p className="footer-copy">
-            &copy; 2025 TRSYP 3.0 &mdash; IEEE RAS Tunisia Section
+            &copy; 2026 TRSYP 3.0 &mdash; IEEE RAS Tunisia Section
           </p>
           <p className="footer-date">
-            October 3&ndash;4, 2025 &mdash; Tunisia
+            October 3&ndash;4, 2026 &mdash; Tunis, Tunisia
           </p>
           <div className="footer-socials">
             <a href="#" className="footer-social" aria-label="Facebook">
