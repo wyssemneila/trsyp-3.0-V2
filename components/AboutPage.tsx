@@ -7,7 +7,7 @@ const TEAM = [
   { name: 'Member Name', role: 'Vice Chair', email: 'vicechair@trsyp.ieee.tn', unit: 'VC-002' },
   { name: 'Member Name', role: 'Technical Lead', email: 'tech@trsyp.ieee.tn', unit: 'TL-003' },
   { name: 'Member Name', role: 'Logistics Lead', email: 'logistics@trsyp.ieee.tn', unit: 'LG-004' },
-  { name: 'Member Name', role: 'Media & Design', email: 'media@trsyp.ieee.tn', unit: 'MD-005' },
+  { name: 'Member Name', role: 'Media Lead', email: 'media@trsyp.ieee.tn', unit: 'ML-005' },
   { name: 'Member Name', role: 'Sponsorship Lead', email: 'sponsors@trsyp.ieee.tn', unit: 'SP-006' },
   { name: 'Member Name', role: 'Workshop Coordinator', email: 'workshops@trsyp.ieee.tn', unit: 'WC-007' },
   { name: 'Member Name', role: 'Challenge Coordinator', email: 'challenge@trsyp.ieee.tn', unit: 'CC-008' },

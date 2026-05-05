@@ -3001,28 +3001,94 @@ a, button {
 /* ═══════════════════════════════════════════════════════════════
    ABOUT / VENUE / CHALLENGE RESPONSIVE
 ═══════════════════════════════════════════════════════════════ */
+/* ──── About / Venue / Challenge — Tablet (1024px) ──── */
 @media (max-width: 1024px) {
   .team-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 768px) {
-  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .venue-hotel-card { grid-template-columns: 1fr; }
   .venue-map-card { grid-template-columns: 1fr; }
+  .venue-map-embed { min-height: 280px; }
+  .venue-map-embed iframe {
+    min-height: 280px;
+    border-radius: 20px 20px 0 0 !important;
+  }
+}
+
+/* ──── About / Venue / Challenge — Small tablet (900px) ──── */
+@media (max-width: 900px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .converter { grid-template-columns: 1fr; }
   .converter-robot { display: none; }
   .converter-speech::before { display: none; }
   .about-pg .prog-hero,
   .venue-pg .prog-hero,
   .challenge-pg .prog-hero { padding: 160px 20px 60px; }
+  .venue-section-title { font-size: clamp(28px, 5vw, 48px); }
+  .team-title { font-size: clamp(28px, 5vw, 48px); }
+  .venue-hotel-name { font-size: clamp(20px, 4vw, 32px); }
 }
-@media (max-width: 480px) {
-  .team-grid { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }
+
+/* ──── About / Venue / Challenge — Mobile (600px) ──── */
+@media (max-width: 600px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .team-section { padding: 60px 0 80px; }
+  .team-header { margin-bottom: 40px; }
+  .team-title { font-size: 28px; }
+  .team-sub { font-size: 14px; }
+  .id-card-name { font-size: 13px; }
+  .id-card-role { font-size: 9px; letter-spacing: 0.1em; }
+  .id-card-avatar-ring { width: 72px; height: 72px; }
+  .id-card-avatar-inner { width: 50px; height: 50px; }
+  .id-card-front, .id-card-back { padding: 14px; }
+  .id-card-org { font-size: 7px; }
+  .id-card-unit { font-size: 8px; padding: 2px 6px; }
+  .id-card-barcode { height: 14px; }
+  .id-card-flip-hint { font-size: 7px; }
+  .id-card-back-value { font-size: 11px; }
+  .id-card-back-label { font-size: 7px; }
+  .id-card-back-content { gap: 10px; }
+
   .venue-where, .venue-tunisia, .venue-currency { padding: 60px 0; }
   .venue-hotel-info { padding: 24px; }
+  .venue-hotel-desc { font-size: 13px; }
+  .venue-hotel-badge { font-size: 9px; }
   .venue-map-info { padding: 24px; }
-  .venue-map-stats b { font-size: 22px; }
+  .venue-map-info h3 { font-size: 20px; }
+  .venue-map-stats { gap: 14px; }
+  .venue-map-stats b { font-size: 24px; }
+  .venue-map-stats span { font-size: 9px; }
+  .venue-map-embed { min-height: 220px; }
+  .venue-map-embed iframe { min-height: 220px; border-radius: 20px 20px 0 0 !important; }
+  .venue-tunisia-sub, .venue-currency-sub { font-size: 14px; }
+  .venue-place-card { width: 200px; padding: 14px; }
+  .venue-place-card h4 { font-size: 13px; }
+  .venue-place-card p { font-size: 11px; }
+  .venue-place-img { height: 70px; }
+
+  .converter-speech { padding: 16px 18px; font-size: 15px; }
   .converter-inputs { grid-template-columns: 1fr; }
+  .converter-input, .converter-select { padding: 12px 14px; font-size: 15px; }
+  .converter-result { padding: 16px 18px; }
   .converter-result-value { font-size: 28px; }
+
   .challenge-coming-inner { padding: 48px 20px; }
+  .challenge-coming-title { font-size: 24px; }
+  .challenge-coming-desc { font-size: 14px; }
+  .challenge-robot-icon { width: 80px; height: 80px; }
+}
+
+/* ──── About / Venue / Challenge — Small phone (390px) ──── */
+@media (max-width: 390px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .id-card-avatar-ring { width: 56px; height: 56px; }
+  .id-card-avatar-inner { width: 40px; height: 40px; }
+  .id-card-name { font-size: 11px; }
+  .id-card-role { font-size: 8px; }
+  .id-card-front, .id-card-back { padding: 10px; }
+  .id-card-header { margin-bottom: 8px; }
+  .id-card-back-content { gap: 8px; }
+  .id-card-back-value { font-size: 10px; }
+  .venue-hotel-info { padding: 18px; }
+  .venue-map-info { padding: 18px; }
+  .venue-map-stats b { font-size: 20px; }
+  .converter-result-value { font-size: 24px; }
 }
