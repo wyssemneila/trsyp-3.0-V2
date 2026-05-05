@@ -2233,8 +2233,8 @@ a, button {
    ABOUT PAGE — Robot ID Cards
 ═══════════════════════════════════════════════════════════════ */
 .about-pg .prog-hero,
-.venue-pg .venue-hero,
-.challenge-pg .challenge-hero {
+.venue-pg .prog-hero,
+.challenge-pg .prog-hero {
   padding: 200px 32px 80px;
 }
 
@@ -2281,7 +2281,7 @@ a, button {
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.id-card.is-flipped {
+.id-card-wrap:hover .id-card {
   transform: rotateY(180deg);
 }
 
@@ -3013,8 +3013,8 @@ a, button {
   .converter-robot { display: none; }
   .converter-speech::before { display: none; }
   .about-pg .prog-hero,
-  .venue-pg .venue-hero,
-  .challenge-pg .challenge-hero { padding: 160px 20px 60px; }
+  .venue-pg .prog-hero,
+  .challenge-pg .prog-hero { padding: 160px 20px 60px; }
 }
 @media (max-width: 480px) {
   .team-grid { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }

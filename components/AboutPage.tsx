@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { useState } from 'react';
 
 const TEAM = [
   { name: 'Member Name', role: 'General Chair', email: 'chair@trsyp.ieee.tn', unit: 'GC-001' },
@@ -15,8 +14,6 @@ const TEAM = [
 ];
 
 function IdCard({ member, index }: { member: typeof TEAM[0]; index: number }) {
-  const [flipped, setFlipped] = useState(false);
-
   return (
     <motion.div
       className="id-card-wrap"
@@ -25,10 +22,7 @@ function IdCard({ member, index }: { member: typeof TEAM[0]; index: number }) {
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
     >
-      <div
-        className={`id-card ${flipped ? 'is-flipped' : ''}`}
-        onClick={() => setFlipped((f) => !f)}
-      >
+      <div className="id-card">
         {/* Front */}
         <div className="id-card-front">
           <div className="id-card-header">
@@ -141,7 +135,7 @@ export default function AboutPage() {
   return (
     <div className="about-pg">
       {/* Hero */}
-      <section className="about-pg-hero">
+      <section className="prog-hero">
         <div className="prog-hero-bg" />
         <div className="prog-hero-overlay" />
         <div className="prog-hero-inner">

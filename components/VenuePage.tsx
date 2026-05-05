@@ -108,7 +108,7 @@ export default function VenuePage() {
   return (
     <div className="venue-pg">
       {/* Hero */}
-      <section className="venue-hero">
+      <section className="prog-hero">
         <div className="prog-hero-bg" />
         <div className="prog-hero-overlay" />
         <div className="prog-hero-inner">

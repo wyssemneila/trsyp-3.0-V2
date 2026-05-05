@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 export default function ChallengePage() {
   return (
     <div className="challenge-pg">
-      <section className="challenge-hero">
+      <section className="prog-hero">
         <div className="prog-hero-bg" />
         <div className="prog-hero-overlay" />
         <div className="prog-hero-inner">
