@@ -266,12 +266,13 @@ export default function ProgramPage() {
 
   useEffect(() => {
     const ids = PROGRAM.map((p) => 'section-' + p.id);
+    const getTop = (el: HTMLElement) => el.getBoundingClientRect().top + window.scrollY;
     const onScroll = () => {
-      const y = window.scrollY + 260;
+      const y = window.scrollY + 200;
       let cur = ids[0];
       for (const id of ids) {
         const el = document.getElementById(id);
-        if (el && el.offsetTop <= y) cur = id;
+        if (el && getTop(el) <= y) cur = id;
       }
       setActive(cur.replace('section-', ''));
     };
@@ -281,9 +282,11 @@ export default function ProgramPage() {
   }, []);
 
   const handleNav = (id: string) => {
-    setActive(id);
     const el = document.getElementById('section-' + id);
-    if (el) window.scrollTo({ top: el.offsetTop - 160, behavior: 'smooth' });
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 180;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
   };
 
   return (
