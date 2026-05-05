@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const PARTNER_SLOTS = Array.from({ length: 6 }, (_, i) => ({
   id: i + 1,
   label: `Partner ${i + 1}`,
@@ -19,7 +21,13 @@ export default function PartnersSection() {
         <div className="partners-grid">
           {PARTNER_SLOTS.map((p) => (
             <div key={p.id} className="partners-slot">
-              <span className="partners-slot-placeholder">{p.label}</span>
+              <Image
+                src="/tn-section.webp"
+                alt={p.label}
+                width={320}
+                height={180}
+                style={{ width: '70%', height: 'auto', objectFit: 'contain' }}
+              />
             </div>
           ))}
         </div>

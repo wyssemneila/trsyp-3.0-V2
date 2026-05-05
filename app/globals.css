@@ -969,26 +969,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .partners-slot {
   aspect-ratio: 16 / 9;
   border-radius: 14px;
-  border: 1px dashed rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.015);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.3s ease, background 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .partners-slot:hover {
-  border-color: rgba(0,232,122,0.15);
-  background: rgba(0,232,122,0.02);
-}
-
-.partners-slot-placeholder {
-  font-family: var(--font-heading);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.12);
+  border-color: rgba(0,232,122,0.25);
+  box-shadow: 0 4px 20px rgba(0,232,122,0.08);
 }
 
 /* ═══════════════════════════════════════════════════════
