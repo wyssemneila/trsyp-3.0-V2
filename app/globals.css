@@ -1618,15 +1618,29 @@ a, button {
 }
 
 /* ──── STICKY NAV ──── */
+.prog-snav-spacer {
+  height: 76px;
+}
 .prog-snav-wrap {
-  position: sticky;
+  position: fixed;
   top: var(--nav-height);
+  left: 0;
+  right: 0;
   z-index: 30;
   padding: 14px 0;
-  background: linear-gradient(180deg, rgba(1,0,8,0.92) 60%, rgba(1,0,8,0.6));
+  background: linear-gradient(180deg, rgba(1,0,8,0.95) 60%, rgba(1,0,8,0.75));
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.prog-snav-wrap.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 .prog-snav {
   display: grid;

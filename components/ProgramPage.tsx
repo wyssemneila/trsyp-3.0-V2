@@ -93,27 +93,30 @@ const KIND_META: Record<string, { label: string; icon: string }> = {
   special: { label: 'Special', icon: '✺' },
 };
 
-function StickyNav({ active, onNav }: { active: string; onNav: (id: string) => void }) {
+function StickyNav({ active, onNav, visible }: { active: string; onNav: (id: string) => void; visible: boolean }) {
   return (
-    <div className="prog-snav-wrap">
-      <div className="prog-container">
-        <nav className="prog-snav">
-          {PROGRAM.map((p) => (
-            <button
-              key={p.id}
-              className={`prog-snav-btn ${active === p.id ? 'is-active' : ''}`}
-              onClick={() => onNav(p.id)}
-            >
-              <span className="prog-snav-num">{p.code}</span>
-              <span className="prog-snav-tx">
-                <span>{p.label}</span>
-                <em>{p.title}</em>
-              </span>
-            </button>
-          ))}
-        </nav>
+    <>
+      <div className="prog-snav-spacer" />
+      <div className={`prog-snav-wrap ${visible ? 'is-visible' : ''}`}>
+        <div className="prog-container">
+          <nav className="prog-snav">
+            {PROGRAM.map((p) => (
+              <button
+                key={p.id}
+                className={`prog-snav-btn ${active === p.id ? 'is-active' : ''}`}
+                onClick={() => onNav(p.id)}
+              >
+                <span className="prog-snav-num">{p.code}</span>
+                <span className="prog-snav-tx">
+                  <span>{p.label}</span>
+                  <em>{p.title}</em>
+                </span>
+              </button>
+            ))}
+          </nav>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -263,6 +266,7 @@ function DaySection({ day }: { day: ProgramDay }) {
 
 export default function ProgramPage() {
   const [active, setActive] = useState('pre');
+  const [navVisible, setNavVisible] = useState(false);
 
   useEffect(() => {
     const ids = PROGRAM.map((p) => 'section-' + p.id);
@@ -275,6 +279,11 @@ export default function ProgramPage() {
         if (el && getTop(el) <= y) cur = id;
       }
       setActive(cur.replace('section-', ''));
+
+      const spacer = document.querySelector('.prog-snav-spacer');
+      if (spacer) {
+        setNavVisible(spacer.getBoundingClientRect().top <= 90);
+      }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
@@ -344,7 +353,7 @@ export default function ProgramPage() {
       </section>
 
       {/* Sticky Nav */}
-      <StickyNav active={active} onNav={handleNav} />
+      <StickyNav active={active} onNav={handleNav} visible={navVisible} />
 
       {/* Day Sections */}
       <div className="prog-main">
