@@ -1506,7 +1506,7 @@ a, button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 160px 32px 80px;
+  padding: 230px 32px 80px;
   overflow: hidden;
 }
 .prog-hero-bg {
@@ -1628,9 +1628,7 @@ a, button {
   right: 0;
   z-index: 30;
   padding: 14px 0;
-  background: linear-gradient(180deg, rgba(1,0,8,0.95) 60%, rgba(1,0,8,0.75));
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: var(--color-bg);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .prog-snav {
