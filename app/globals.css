@@ -272,20 +272,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .cd-num {
-  font-size: clamp(16px, 2vw, 22px);
+  font-size: clamp(22px, 3vw, 36px);
   font-weight: 300;
   letter-spacing: 0.08em;
   color: #fff;
   font-variant-numeric: tabular-nums;
   line-height: 1;
   border-bottom: 1px solid rgba(255,255,255,0.20);
-  padding-bottom: 5px;
+  padding-bottom: 6px;
   min-width: 2ch;
   text-align: center;
 }
 
 .cd-label {
-  font-size: clamp(7px, 0.6vw, 8px);
+  font-size: clamp(9px, 0.75vw, 11px);
   font-weight: 500;
   letter-spacing: 0.28em;
   color: rgba(255,255,255,0.35);
@@ -294,10 +294,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .cd-sep {
   width: 1px;
-  height: 14px;
+  height: 22px;
   background: rgba(255,255,255,0.18);
-  margin: 0 14px;
-  margin-bottom: 12px;
+  margin: 0 18px;
+  margin-bottom: 14px;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -1436,8 +1436,8 @@ a, button {
     padding: 0 16px;
   }
 
-  .cd-num { font-size: 15px; }
-  .cd-sep { margin: 0 10px; margin-bottom: 12px; }
+  .cd-num { font-size: 20px; }
+  .cd-sep { margin: 0 12px; margin-bottom: 14px; }
 
   .about { padding: 72px 16px 48px; }
   .ab-main-title { font-size: clamp(36px, 10vw, 52px); }
