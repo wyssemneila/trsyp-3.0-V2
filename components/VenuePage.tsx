@@ -208,21 +208,17 @@ export default function VenuePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="venue-map-placeholder">
-              <svg viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M150 30 L180 50 L190 80 L200 100 L210 120 L200 150 L210 180 L220 200 L210 240 L180 260 L160 300 L140 340 L130 360 L120 340 L110 300 L100 280 L90 260 L80 220 L90 180 L100 150 L95 120 L100 100 L110 80 L120 50 Z"
-                  stroke="var(--color-green)" strokeWidth="1.5" fill="rgba(0,232,122,0.05)" />
-                <circle cx="150" cy="120" r="6" fill="var(--color-green)">
-                  <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite" />
-                </circle>
-                <text x="162" y="124" fill="var(--color-green)" fontSize="10" fontFamily="var(--font-heading)">TUNIS</text>
-                <circle cx="170" cy="105" r="3" fill="var(--color-pink)" opacity="0.7" />
-                <text x="178" y="109" fill="rgba(255,255,255,0.5)" fontSize="8">Carthage</text>
-                <circle cx="120" cy="250" r="3" fill="var(--color-pink)" opacity="0.7" />
-                <text x="128" y="254" fill="rgba(255,255,255,0.5)" fontSize="8">Douz</text>
-                <circle cx="200" cy="200" r="3" fill="var(--color-pink)" opacity="0.7" />
-                <text x="208" y="204" fill="rgba(255,255,255,0.5)" fontSize="8">Djerba</text>
-              </svg>
+            <div className="venue-map-embed">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d204480.3573498658!2d10.0653!3d36.8065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd337f5e7ef543%3A0xd671924e714a0275!2sTunis%2C%20Tunisia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                width="100%"
+                height="100%"
+                style={{ border: 0, borderRadius: '20px 0 0 20px' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Tunisia Map"
+              />
             </div>
             <div className="venue-map-info">
               <h3>Tunisia at a Glance</h3>
