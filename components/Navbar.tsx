@@ -22,10 +22,10 @@ export default function Navbar() {
           <Image
             src="/trsyp-logo.png"
             alt="TRSYP 3.0"
-            width={200}
-            height={68}
+            width={240}
+            height={82}
             priority
-            style={{ height: '60px', width: 'auto', objectFit: 'contain' }}
+            style={{ height: '80px', width: 'auto', objectFit: 'contain' }}
           />
         </a>
 

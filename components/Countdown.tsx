@@ -34,11 +34,13 @@ export default function Countdown() {
   return (
     <div className="cd">
       {units.map((u, i) => (
-        <span key={u.label} className="cd-unit">
-          <span className="cd-num">{u.val}</span>
-          <span className="cd-label">{u.label}</span>
+        <div key={u.label} className="cd-unit">
+          <div className="cd-block">
+            <span className="cd-num">{u.val}</span>
+            <span className="cd-label">{u.label}</span>
+          </div>
           {i < 3 && <span className="cd-sep" />}
-        </span>
+        </div>
       ))}
     </div>
   );
