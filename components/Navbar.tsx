@@ -6,7 +6,7 @@ import Image from 'next/image';
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'TRSYP', href: '#about' },
-  { label: 'Program', href: '#program' },
+  { label: 'Program', href: '/program' },
   { label: 'Sponsors', href: '#sponsors' },
   { label: 'IEEE Partners', href: '#partners' },
   { label: 'FAQ', href: '#faq' },
