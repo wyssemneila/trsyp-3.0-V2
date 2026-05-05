@@ -11,9 +11,9 @@ export default function Footer() {
             <Image
               src="/trsyp-logo.png"
               alt="TRSYP 3.0"
-              width={200}
-              height={68}
-              style={{ height: '56px', width: 'auto', objectFit: 'contain' }}
+              width={600}
+              height={204}
+              style={{ height: '160px', width: 'auto', objectFit: 'contain' }}
             />
             <p className="footer-brand-sub">
               IEEE Tunisian RAS Student &amp; Young Professional Congress

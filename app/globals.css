@@ -1249,73 +1249,229 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ═══════════════════════════════════════════════════════
-   RESPONSIVE
+   GLOBAL TOUCH IMPROVEMENTS (all screen sizes)
+   ui-ux-pro-max: touch-target-size, tap-delay
+═══════════════════════════════════════════════════════ */
+
+/* 44×44px minimum touch targets */
+.navbar-hamburger {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.navbar-register {
+  min-height: 44px;
+}
+
+/* Reduce 300ms tap delay */
+a, button {
+  touch-action: manipulation;
+}
+
+/* Footer social icons — 44×44px on mobile */
+@media (hover: none) {
+  .footer-social {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   TABLET — 1024px
+   ui-ux-pro-max: breakpoint-consistency, layout
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .ab-hero-grid {
+    grid-template-columns: 300px 1fr;
+    gap: clamp(40px, 4vw, 64px);
+  }
+
+  .why-bento {
+    gap: 16px;
+  }
+
+  .footer-top {
+    gap: 48px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   TABLET / HAMBURGER BREAKPOINT — 900px
 ═══════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
+  /* Navbar */
   .navbar { padding: 0 20px; }
   .navbar-links, .navbar-register { display: none; }
   .navbar-hamburger { display: flex; }
 
-  .hero-logo svg { width: clamp(180px, 72vw, 340px); }
-  .hero-tagline { font-size: clamp(9px, 3.2vw, 12px); }
+  /* Hero */
+  .hero-logo svg { width: clamp(180px, 68vw, 340px); }
+  .hero-tagline {
+    font-size: clamp(10px, 3vw, 13px);
+    letter-spacing: 0.16em;
+    padding: 0 20px;
+  }
+  .cd { gap: 0; }
 
+  /* About */
+  .about { padding: 88px 24px 64px; }
   .ab-hero-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
   }
   .ab-vline-accent { display: none; }
-  .ab-pillars { grid-template-columns: 1fr; }
+  .ab-pillars { grid-template-columns: 1fr 1fr; gap: 12px; }
   .ab-stats { grid-template-columns: repeat(2, 1fr); }
   .ab-corner { width: 28px; height: 28px; }
+  .ab-eyebrow { margin-bottom: 36px; }
+  .ab-divider { margin: 40px 0; }
 
+  /* Theme */
   .theme-title-line { font-size: clamp(24px, 5vw, 40px); }
   .theme-title-accent { font-size: clamp(28px, 6vw, 48px); }
   .theme-pre-header { padding: 48px 0 28px; }
+  .theme-banner-wrap { height: clamp(260px, 45vw, 420px); }
 
-  .why-bento { grid-template-columns: 1fr; }
-  .why { padding: 80px clamp(20px, 5vw, 48px) 80px; }
+  /* Why Join */
+  .why { padding: 80px 24px 80px; }
+  .why-bento { grid-template-columns: 1fr; gap: 16px; }
+  .why-header { margin-bottom: 48px; }
 
-  .partners-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Partners */
+  .partners { padding: 72px 24px; }
+  .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .partners-header { margin-bottom: 40px; }
 
+  /* Previous edition */
+  .prev-edition { padding: 72px 0 88px; }
+  .prev-edition-inner { padding: 0 24px; }
+
+  /* Footer */
+  .footer-inner { padding: 56px 24px 32px; }
   .footer-top {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .footer-links-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* ═══════════════════════════════════════════════════════
+   MOBILE — 600px
+   ui-ux-pro-max: mobile-first, readable-font-size, touch
+═══════════════════════════════════════════════════════ */
 @media (max-width: 600px) {
-  .about { padding: 72px 20px 56px; }
-  .ab-pillars { grid-template-columns: 1fr; }
+  /* About — breathing room without wasting height */
+  .about { padding: 80px 20px 56px; }
+  .ab-pillars { grid-template-columns: 1fr; gap: 12px; }
   .ab-stats {
     grid-template-columns: 1fr 1fr;
     border-radius: 10px;
   }
-  .ab-stat-card { padding: 20px 12px; }
-  .ab-divider { margin: 40px 0; }
+  .ab-stat-card { padding: 20px 10px; }
+  .ab-stat-num { font-size: clamp(22px, 6vw, 32px); }
+  .ab-desc-text { font-size: 15px; line-height: 1.75; }
+  .ab-tagline { font-size: 15px; }
 
-  .theme-banner-wrap { height: clamp(240px, 55vw, 360px); }
+  /* Theme */
+  .theme-banner-wrap { height: clamp(220px, 56vw, 320px); }
+  .theme-title-line { font-size: clamp(22px, 7vw, 36px); }
+  .theme-title-accent { font-size: clamp(26px, 8vw, 44px); }
+  .theme-pre-header { padding: 40px 0 24px; gap: 12px; }
+  .theme-pre-line { width: 36px; }
 
-  .why { padding: 64px 20px 72px; }
-  .why-bento { gap: 16px; }
+  /* Why Join */
+  .why { padding: 64px 20px 64px; }
+  .why-bento { gap: 14px; }
+  .why-bento-card { padding: 28px 24px 28px; gap: 16px; }
+  .why-bento-title { font-size: 16px; }
+  .why-bento-desc { font-size: 14px; line-height: 1.7; }
+  .why-bento-icon { width: 44px; height: 44px; }
+  .why-bento-icon svg { width: 44px; height: 44px; }
 
-  .partners-grid { grid-template-columns: 1fr 1fr; }
+  /* Partners */
+  .partners { padding: 56px 20px 56px; }
+  .partners-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .partners-header { margin-bottom: 32px; }
 
-  .carousel-slide { width: 260px; }
+  /* Carousel */
+  .carousel-slide { width: 240px; }
+  .carousel-track { gap: 14px; }
+  .prev-edition { padding: 56px 0 72px; }
+  .prev-edition-inner { padding: 0 20px; }
+  .prev-edition-header { margin-bottom: 36px; }
 
+  /* Footer */
+  .footer-inner { padding: 48px 20px 28px; }
+  .footer-top { gap: 32px; }
   .footer-links-grid {
     grid-template-columns: 1fr 1fr;
     gap: 24px;
   }
   .footer-bottom {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 12px;
   }
-  .footer-inner { padding: 48px 20px 32px; }
+  .footer-socials { justify-content: center; }
+  .footer-brand-sub { font-size: 14px; }
 }
 
+/* ═══════════════════════════════════════════════════════
+   SMALL MOBILE — 375px
+   ui-ux-pro-max: minimum viable layout
+═══════════════════════════════════════════════════════ */
+@media (max-width: 390px) {
+  .navbar { padding: 0 16px; }
+
+  .hero-tagline {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    padding: 0 16px;
+  }
+
+  .cd-num { font-size: 15px; }
+  .cd-sep { margin: 0 10px; margin-bottom: 12px; }
+
+  .about { padding: 72px 16px 48px; }
+  .ab-main-title { font-size: clamp(36px, 10vw, 52px); }
+  .ab-title-accent { font-size: clamp(44px, 12vw, 60px); }
+
+  .why { padding: 56px 16px 56px; }
+  .why-bento-card { padding: 24px 18px; }
+
+  .partners { padding: 48px 16px; }
+  .partners-grid { grid-template-columns: 1fr; }
+
+  .footer-inner { padding: 40px 16px 24px; }
+  .footer-links-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   REDUCED MOTION
+   ui-ux-pro-max: reduced-motion
+═══════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   .ab-glow-green, .ab-glow-pink { animation: none; }
   .ab-pillar, .why-bento-card { transition: none; }
-  .carousel-track { animation: none; }
+  .carousel-track { animation-play-state: paused; }
   .gridbeam-svg { display: none; }
+  .gridbeam-grid { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   LANDSCAPE MOBILE — orientation support
+   ui-ux-pro-max: orientation-support
+═══════════════════════════════════════════════════════ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero { height: 100svh; }
+  .hero-content { padding-bottom: 20px; }
+  .cd { margin-top: 10px; }
+  .about { padding: 64px 24px 48px; }
 }
