@@ -5,11 +5,10 @@ import Image from 'next/image';
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'TRSYP', href: '#about' },
+  { label: 'Challenge', href: '/challenge' },
   { label: 'Program', href: '/program' },
-  { label: 'Sponsors', href: '#sponsors' },
-  { label: 'IEEE Partners', href: '#partners' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Venue', href: '/venue' },
+  { label: 'About Us', href: '/about' },
 ];
 
 export default function Navbar() {

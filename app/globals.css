@@ -2228,3 +2228,802 @@ a, button {
   .prog-snav { grid-template-columns: 1fr; gap: 4px; }
   .prog-hero-h { font-size: 48px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   ABOUT PAGE — Robot ID Cards
+═══════════════════════════════════════════════════════════════ */
+.about-pg .prog-hero,
+.venue-pg .venue-hero,
+.challenge-pg .challenge-hero {
+  padding: 200px 32px 80px;
+}
+
+.team-section {
+  padding: 100px 0 120px;
+}
+.team-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+.team-title {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+.team-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+  max-width: 560px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ─── ID Card ─── */
+.id-card-wrap {
+  perspective: 900px;
+}
+.id-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2.5 / 3.8;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.id-card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.id-card-front,
+.id-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(0,232,122,0.15);
+  background:
+    linear-gradient(170deg, rgba(0,232,122,0.04) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(10,4,24,0.95), rgba(1,0,8,0.98));
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.id-card-back {
+  transform: rotateY(180deg);
+}
+.id-card-front:hover,
+.id-card-back:hover {
+  border-color: rgba(0,232,122,0.35);
+  box-shadow: 0 0 30px rgba(0,232,122,0.08), inset 0 0 30px rgba(0,232,122,0.03);
+}
+
+.id-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.id-card-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.id-card-org {
+  font-family: var(--font-heading);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--color-green);
+  font-weight: 700;
+}
+.id-card-badge {
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+.id-card-unit {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.3);
+  padding: 3px 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+}
+
+.id-card-avatar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.id-card-avatar-ring {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,232,122,0.25);
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.id-card-avatar-ring::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0,232,122,0.12);
+}
+.id-card-avatar-inner {
+  width: 70px;
+  height: 70px;
+  color: rgba(0,232,122,0.5);
+}
+.id-card-scanline {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-green), transparent);
+  opacity: 0.3;
+  animation: scanline 3s ease-in-out infinite;
+}
+@keyframes scanline {
+  0%, 100% { top: 20%; opacity: 0; }
+  10% { opacity: 0.3; }
+  50% { top: 80%; opacity: 0.3; }
+  90% { opacity: 0; }
+}
+
+.id-card-info {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.id-card-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.id-card-role {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-green);
+  font-weight: 500;
+}
+
+.id-card-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+.id-card-barcode {
+  display: flex;
+  gap: 1.5px;
+  height: 20px;
+  align-items: center;
+}
+.id-card-barcode span {
+  height: 100%;
+  background: rgba(255,255,255,0.15);
+  border-radius: 0.5px;
+}
+.id-card-flip-hint {
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+}
+
+.id-card-circuit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: var(--color-green);
+}
+.id-card-circuit svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Back side */
+.id-card-back-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 10px 0;
+}
+.id-card-back-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.id-card-back-label {
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.id-card-back-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.id-card-back-email {
+  font-size: 11px;
+  color: var(--color-green);
+  word-break: break-all;
+}
+.id-card-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-green);
+  box-shadow: 0 0 8px var(--color-green);
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VENUE PAGE
+═══════════════════════════════════════════════════════════════ */
+.venue-where,
+.venue-tunisia,
+.venue-currency {
+  padding: 100px 0;
+}
+.venue-where-header,
+.venue-tunisia-header,
+.venue-currency-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.venue-section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-top: 8px;
+}
+.venue-tunisia-sub,
+.venue-currency-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+  max-width: 600px;
+}
+
+/* Hotel card */
+.venue-hotel-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid rgba(0,232,122,0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(10,4,24,0.6);
+}
+.venue-hotel-img {
+  background: rgba(0,232,122,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+.venue-hotel-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.25);
+}
+.venue-hotel-placeholder svg {
+  width: 120px;
+  height: 80px;
+}
+.venue-hotel-placeholder span {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.venue-hotel-info {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+.venue-hotel-badge {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--color-green);
+  font-weight: 600;
+}
+.venue-hotel-name {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.venue-hotel-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.55);
+}
+.venue-hotel-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.venue-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.venue-detail-label {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.venue-detail b {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Map card */
+.venue-map-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid rgba(0,232,122,0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(10,4,24,0.6);
+  margin-bottom: 48px;
+}
+.venue-map-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(0,232,122,0.02);
+}
+.venue-map-placeholder svg {
+  width: 200px;
+  height: auto;
+}
+.venue-map-info {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+}
+.venue-map-info h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+.venue-map-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.venue-map-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.venue-map-stats b {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-green);
+}
+.venue-map-stats span {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+/* Places carousel */
+.venue-places-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+}
+.venue-places-track {
+  display: flex;
+  gap: 20px;
+  animation: venue-scroll 50s linear infinite;
+  width: max-content;
+}
+@keyframes venue-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.venue-place-card {
+  width: 240px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  background: rgba(10,4,24,0.6);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.3s;
+}
+.venue-place-card:hover {
+  border-color: rgba(0,232,122,0.25);
+}
+.venue-place-img {
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.venue-place-img svg {
+  width: 60px;
+  height: 40px;
+  color: rgba(255,255,255,0.2);
+}
+.venue-place-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+.venue-place-card p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+}
+
+/* ─── Currency Converter ─── */
+.converter {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  align-items: start;
+  max-width: 800px;
+}
+
+.converter-robot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.converter-robot-head {
+  width: 100px;
+  height: 80px;
+  background: rgba(10,4,24,0.9);
+  border: 2px solid rgba(0,232,122,0.3);
+  border-radius: 20px 20px 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+.converter-robot-eye {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-green);
+  box-shadow: 0 0 12px var(--color-green);
+  animation: blink-eye 4s infinite;
+}
+@keyframes blink-eye {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+.converter-robot-mouth {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 4px;
+  background: rgba(0,232,122,0.4);
+  border-radius: 2px;
+  transition: height 0.15s;
+}
+.converter-robot-mouth.is-talking {
+  height: 10px;
+  border-radius: 4px;
+  animation: talk 0.3s ease infinite;
+}
+@keyframes talk {
+  0%, 100% { height: 4px; }
+  50% { height: 12px; }
+}
+
+.converter-robot-body {
+  width: 120px;
+  height: 100px;
+  background: rgba(10,4,24,0.9);
+  border: 2px solid rgba(0,232,122,0.2);
+  border-radius: 12px;
+  margin-top: -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.converter-robot-screen {
+  width: 80px;
+  height: 50px;
+  border: 1px solid rgba(0,232,122,0.2);
+  border-radius: 6px;
+  background: rgba(0,232,122,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.converter-robot-screen-label {
+  font-size: 7px;
+  letter-spacing: 0.2em;
+  color: rgba(0,232,122,0.5);
+}
+.converter-robot-bars {
+  display: flex;
+  gap: 3px;
+  align-items: end;
+  height: 18px;
+}
+.converter-robot-bars span {
+  width: 6px;
+  background: rgba(0,232,122,0.3);
+  border-radius: 1px;
+  height: 6px;
+  transition: height 0.3s;
+}
+.converter-robot-bars.is-active span:nth-child(1) { height: 8px; background: var(--color-green); }
+.converter-robot-bars.is-active span:nth-child(2) { height: 14px; background: var(--color-green); }
+.converter-robot-bars.is-active span:nth-child(3) { height: 18px; background: var(--color-green); }
+.converter-robot-bars.is-active span:nth-child(4) { height: 10px; background: var(--color-green); }
+.converter-robot-bars.is-active span:nth-child(5) { height: 6px; background: var(--color-green); }
+
+.converter-robot-arms {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.converter-robot-arm {
+  width: 20px;
+  height: 3px;
+  background: rgba(0,232,122,0.3);
+  border-radius: 2px;
+}
+
+.converter-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.converter-speech {
+  position: relative;
+  background: rgba(10,4,24,0.8);
+  border: 1px solid rgba(0,232,122,0.15);
+  border-radius: 16px;
+  padding: 20px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+.converter-speech::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 10px solid rgba(0,232,122,0.15);
+}
+.converter-speech p {
+  font-variant-numeric: tabular-nums;
+}
+
+.converter-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.converter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.converter-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+.converter-input,
+.converter-select {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(10,4,24,0.8);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.converter-input:focus,
+.converter-select:focus {
+  border-color: var(--color-green);
+  box-shadow: 0 0 0 3px rgba(0,232,122,0.1);
+}
+.converter-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2300E87A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+.converter-select option {
+  background: #0a0418;
+  color: #fff;
+}
+
+.converter-result {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 24px;
+  border: 1px solid rgba(0,232,122,0.2);
+  border-radius: 14px;
+  background: rgba(0,232,122,0.04);
+}
+.converter-result-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-green);
+}
+.converter-result-value {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-green);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CHALLENGE PAGE
+═══════════════════════════════════════════════════════════════ */
+.challenge-coming {
+  padding: 100px 0 160px;
+}
+.challenge-coming-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 80px 32px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 24px;
+  background:
+    radial-gradient(60% 60% at 50% 0%, rgba(0,232,122,0.08), transparent 60%),
+    rgba(10,4,24,0.5);
+}
+.challenge-robot-icon {
+  width: 120px;
+  height: 120px;
+  color: rgba(0,232,122,0.4);
+}
+.challenge-coming-title {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  color: #fff;
+}
+.challenge-coming-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+  max-width: 520px;
+}
+.challenge-coming-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid rgba(0,232,122,0.25);
+  border-radius: 100px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--color-green);
+  font-weight: 500;
+}
+.challenge-coming-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-green);
+  animation: pulse-dot 2s infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ABOUT / VENUE / CHALLENGE RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .venue-hotel-card { grid-template-columns: 1fr; }
+  .venue-map-card { grid-template-columns: 1fr; }
+  .converter { grid-template-columns: 1fr; }
+  .converter-robot { display: none; }
+  .converter-speech::before { display: none; }
+  .about-pg .prog-hero,
+  .venue-pg .venue-hero,
+  .challenge-pg .challenge-hero { padding: 160px 20px 60px; }
+}
+@media (max-width: 480px) {
+  .team-grid { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }
+  .team-section { padding: 60px 0 80px; }
+  .venue-where, .venue-tunisia, .venue-currency { padding: 60px 0; }
+  .venue-hotel-info { padding: 24px; }
+  .venue-map-info { padding: 24px; }
+  .venue-map-stats b { font-size: 22px; }
+  .converter-inputs { grid-template-columns: 1fr; }
+  .converter-result-value { font-size: 28px; }
+  .challenge-coming-inner { padding: 48px 20px; }
+}
