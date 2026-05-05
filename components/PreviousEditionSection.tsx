@@ -1,11 +1,16 @@
 'use client';
 
-const PLACEHOLDER_IMAGES = Array.from({ length: 8 }, (_, i) => ({
-  id: i + 1,
-  label: `TRSYP 2.0 — Photo ${i + 1}`,
-}));
+import Image from 'next/image';
+
+const IMAGES = [
+  { src: '/prev-1.jpg', alt: 'TRSYP 2.0 — 1st Place Winners' },
+  { src: '/prev-2.jpg', alt: 'TRSYP 2.0 — Main Stage' },
+  { src: '/prev-3.jpg', alt: 'TRSYP 2.0 — Team Members' },
+];
 
 export default function PreviousEditionSection() {
+  const doubled = [...IMAGES, ...IMAGES, ...IMAGES, ...IMAGES];
+
   return (
     <section className="prev-edition" id="previous-edition">
       <div className="prev-edition-inner">
@@ -19,14 +24,17 @@ export default function PreviousEditionSection() {
           <p className="prev-edition-sub">Highlights from TRSYP 2.0</p>
         </div>
 
-        {/* Infinite scrolling carousel — CSS-driven */}
         <div className="carousel-track-wrap">
           <div className="carousel-track">
-            {[...PLACEHOLDER_IMAGES, ...PLACEHOLDER_IMAGES].map((img, i) => (
+            {doubled.map((img, i) => (
               <div key={i} className="carousel-slide">
-                <div className="carousel-placeholder">
-                  <span className="carousel-placeholder-text">{img.label}</span>
-                </div>
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={600}
+                  height={400}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                />
               </div>
             ))}
           </div>
