@@ -1632,15 +1632,6 @@ a, button {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  transform: translateY(-100%);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.prog-snav-wrap.is-visible {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
 }
 .prog-snav {
   display: grid;
