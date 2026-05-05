@@ -161,7 +161,8 @@ function TimeStrip({ day }: { day: ProgramDay }) {
                 style={{ left: `${left}%`, width: `${Math.max(width, 2.5)}%` }}
                 title={`${it.time} · ${it.title}`}
               >
-                <span>{it.time}</span>
+                <span className="prog-strip-block-time">{it.time}</span>
+                <span className="prog-strip-block-title">{it.title}</span>
               </div>
             );
           })}
@@ -282,7 +283,7 @@ export default function ProgramPage() {
   const handleNav = (id: string) => {
     setActive(id);
     const el = document.getElementById('section-' + id);
-    if (el) window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
+    if (el) window.scrollTo({ top: el.offsetTop - 160, behavior: 'smooth' });
   };
 
   return (
