@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
+import Image from 'next/image';
 
 const TEAM = [
   { name: 'Member Name', role: 'General Chair', email: 'chair@trsyp.ieee.tn', unit: 'GC-001' },
@@ -36,16 +37,13 @@ function IdCard({ member, index }: { member: typeof TEAM[0]; index: number }) {
           <div className="id-card-avatar">
             <div className="id-card-avatar-ring">
               <div className="id-card-avatar-inner">
-                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="20" y="16" width="40" height="28" rx="6" stroke="currentColor" strokeWidth="1.5" />
-                  <circle cx="32" cy="28" r="3" fill="currentColor" />
-                  <circle cx="48" cy="28" r="3" fill="currentColor" />
-                  <path d="M28 36h24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  <rect x="26" y="48" width="28" height="20" rx="4" stroke="currentColor" strokeWidth="1.5" />
-                  <path d="M16 52h10M54 52h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  <circle cx="34" cy="56" r="2" fill="currentColor" />
-                  <circle cx="46" cy="56" r="2" fill="currentColor" />
-                </svg>
+                <Image
+                  src="/rayhane.png"
+                  alt={member.name}
+                  width={80}
+                  height={80}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+                />
               </div>
             </div>
             <div className="id-card-scanline" />
