@@ -50,7 +50,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p className="footer-copy">
-            &copy; 2026 TRSYP 3.0 &mdash; IEEE RAS Tunisia Section
+            &copy; 2026 TRSYP 3.0
           </p>
           <p className="footer-date">
             October 3&ndash;4, 2026 &mdash; Tunis, Tunisia
