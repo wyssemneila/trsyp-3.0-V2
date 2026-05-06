@@ -24,7 +24,7 @@ export default function Navbar() {
             width={240}
             height={82}
             priority
-            style={{ height: '104px', width: 'auto', objectFit: 'contain' }}
+            style={{ height: '146px', width: 'auto', objectFit: 'contain' }}
           />
         </a>
 
