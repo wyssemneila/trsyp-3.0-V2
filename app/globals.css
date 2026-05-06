@@ -1294,10 +1294,12 @@ a, button {
    TABLET / HAMBURGER BREAKPOINT — 900px
 ═══════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
+  :root { --nav-height: 72px; }
   /* Navbar */
   .navbar { padding: 0 20px; }
   .navbar-links, .navbar-register { display: none; }
   .navbar-hamburger { display: flex; }
+  .navbar-logo img { height: 52px !important; }
 
   /* Hero */
   .hero-logo svg { width: clamp(180px, 68vw, 340px); }
@@ -1306,7 +1308,9 @@ a, button {
     letter-spacing: 0.16em;
     padding: 0 20px;
   }
-  .cd { gap: 0; }
+  .cd { gap: 0; flex-wrap: wrap; justify-content: center; row-gap: 8px; }
+  .cd-num { font-size: clamp(22px, 7vw, 36px); }
+  .cd-sep { margin: 0 10px; height: 22px; }
 
   /* About */
   .about { padding: 88px 24px 64px; }
@@ -3010,7 +3014,7 @@ a, button {
 @media (max-width: 900px) {
   .team-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .converter { grid-template-columns: 1fr; }
-  .converter-robot { display: none; }
+  .converter-robot { transform: scale(0.75); transform-origin: top center; margin-bottom: -20px; }
   .converter-speech::before { display: none; }
   .about-pg .prog-hero,
   .venue-pg .prog-hero,
