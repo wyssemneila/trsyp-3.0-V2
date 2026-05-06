@@ -1302,7 +1302,7 @@ a, button {
   .navbar { padding: 0 20px; }
   .navbar-links, .navbar-register { display: none; }
   .navbar-hamburger { display: flex; }
-  .navbar-logo img { height: 52px !important; }
+  .navbar-logo img { height: 90px !important; }
 
   /* Hero */
   .hero-logo svg { width: clamp(180px, 68vw, 340px); }
