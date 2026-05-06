@@ -2344,8 +2344,8 @@ a, button {
   position: relative;
 }
 .id-card-avatar-ring {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 2px solid rgba(0,232,122,0.25);
   display: grid;
@@ -2360,8 +2360,8 @@ a, button {
   border: 1px dashed rgba(0,232,122,0.12);
 }
 .id-card-avatar-inner {
-  width: 70px;
-  height: 70px;
+  width: 105px;
+  height: 105px;
   color: rgba(0,232,122,0.5);
 }
 .id-card-scanline {
