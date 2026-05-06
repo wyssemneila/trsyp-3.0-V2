@@ -14,8 +14,16 @@ export default function ThemeSection() {
       {/* Banner image container */}
       <div className="theme-banner-wrap">
         <Image
-          className="theme-banner-img"
+          className="theme-banner-img theme-banner-desktop"
           src="/b.png"
+          alt="Human and robot facing each other — Human-Robot Symbiosis"
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          priority={false}
+        />
+        <Image
+          className="theme-banner-img theme-banner-mobile"
+          src="/b2.png"
           alt="Human and robot facing each other — Human-Robot Symbiosis"
           fill
           style={{ objectFit: 'cover', objectPosition: 'center' }}

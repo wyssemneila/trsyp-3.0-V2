@@ -649,6 +649,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   object-fit: cover;
   object-position: center;
 }
+.theme-banner-mobile { display: none; }
+.theme-banner-desktop { display: block; }
 
 .theme-overlay {
   position: absolute;
@@ -1372,7 +1374,9 @@ a, button {
   .ab-tagline { font-size: 15px; }
 
   /* Theme */
-  .theme-banner-wrap { height: clamp(220px, 56vw, 320px); }
+  .theme-banner-wrap { height: clamp(160px, 42vw, 280px); }
+  .theme-banner-mobile { display: block; }
+  .theme-banner-desktop { display: none; }
   .theme-title-line { font-size: clamp(22px, 7vw, 36px); }
   .theme-title-accent { font-size: clamp(26px, 8vw, 44px); }
   .theme-pre-header { padding: 40px 0 24px; gap: 12px; }
