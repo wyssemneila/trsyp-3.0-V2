@@ -5,7 +5,7 @@
 }
 
 :root {
-  --nav-height: 130px;
+  --nav-height: 90px;
   --color-pink:  #FF1D78;
   --color-green: #00E87A;
   --color-bg:    #010008;
@@ -73,6 +73,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
+  overflow: visible;
   background: rgba(1, 0, 8, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
