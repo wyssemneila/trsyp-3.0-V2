@@ -13,6 +13,7 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
 
   return (
     <>
@@ -36,9 +37,9 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a className="navbar-register" href="#register">
+        <button className="navbar-register" onClick={() => setShowRegister(true)}>
           Register Now
-        </a>
+        </button>
 
         <button
           className="navbar-hamburger"
@@ -57,10 +58,43 @@ export default function Navbar() {
             {l.label}
           </a>
         ))}
-        <a className="navbar-mobile-register" href="#register" onClick={() => setOpen(false)}>
+        <button
+          className="navbar-mobile-register"
+          onClick={() => { setOpen(false); setShowRegister(true); }}
+        >
           Register Now
-        </a>
+        </button>
       </div>
+
+      {showRegister && (
+        <div className="reg-overlay" onClick={() => setShowRegister(false)}>
+          <div className="reg-popup" onClick={(e) => e.stopPropagation()}>
+            <button className="reg-close" onClick={() => setShowRegister(false)} aria-label="Close">
+              &times;
+            </button>
+            <div className="reg-popup-header">
+              <span className="reg-popup-badge">TRSYP 3.0</span>
+              <h3 className="reg-popup-title">Register As</h3>
+              <p className="reg-popup-sub">Choose your registration type</p>
+            </div>
+            <div className="reg-popup-buttons">
+              <a href="#" className="reg-btn reg-btn-participant">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                <span>Participant</span>
+              </a>
+              <a href="#" className="reg-btn reg-btn-challenger">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+                <span>Challenger</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

@@ -199,6 +199,129 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-top: 8px;
 }
 
+/* ─── REGISTER POPUP ─────────────────────────────────── */
+.reg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: regFadeIn 0.2s ease;
+}
+@keyframes regFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.reg-popup {
+  position: relative;
+  background: linear-gradient(145deg, rgba(10, 15, 30, 0.97), rgba(5, 8, 18, 0.99));
+  border: 1px solid rgba(0, 232, 122, 0.15);
+  border-radius: 20px;
+  padding: 40px 36px 36px;
+  min-width: 320px;
+  max-width: 400px;
+  width: 90vw;
+  box-shadow: 0 0 60px rgba(0, 232, 122, 0.06), 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: regSlideUp 0.25s ease;
+}
+@keyframes regSlideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.reg-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.reg-close:hover { color: #fff; }
+.reg-popup-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.reg-popup-badge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-green);
+  border: 1px solid rgba(0, 232, 122, 0.25);
+  border-radius: 4px;
+  padding: 3px 10px;
+  margin-bottom: 14px;
+}
+.reg-popup-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  margin: 0 0 6px;
+}
+.reg-popup-sub {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+.reg-popup-buttons {
+  display: flex;
+  gap: 14px;
+}
+.reg-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.reg-btn svg {
+  width: 32px;
+  height: 32px;
+}
+.reg-btn-participant {
+  background: rgba(0, 232, 122, 0.08);
+  border: 1px solid rgba(0, 232, 122, 0.2);
+  color: var(--color-green);
+}
+.reg-btn-participant:hover {
+  background: rgba(0, 232, 122, 0.15);
+  border-color: rgba(0, 232, 122, 0.4);
+  box-shadow: 0 0 24px rgba(0, 232, 122, 0.12);
+  transform: translateY(-2px);
+}
+.reg-btn-challenger {
+  background: rgba(255, 29, 120, 0.08);
+  border: 1px solid rgba(255, 29, 120, 0.2);
+  color: var(--color-pink);
+}
+.reg-btn-challenger:hover {
+  background: rgba(255, 29, 120, 0.15);
+  border-color: rgba(255, 29, 120, 0.4);
+  box-shadow: 0 0 24px rgba(255, 29, 120, 0.12);
+  transform: translateY(-2px);
+}
+
 /* ─── HERO ────────────────────────────────────────────── */
 .hero {
   position: relative;
