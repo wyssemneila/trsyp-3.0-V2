@@ -2862,6 +2862,26 @@ a, button {
   line-height: 1.6;
   color: rgba(255,255,255,0.5);
 }
+.prog-tl-meta {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.prog-tl-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: rgba(0,232,122,0.7);
+  font-family: var(--font-body);
+}
+.prog-tl-meta-item svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  stroke: rgba(0,232,122,0.6);
+}
 
 /* ──── CTA ──── */
 .prog-cta {
