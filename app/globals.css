@@ -2764,7 +2764,7 @@ a, button {
 .prog-timeline {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 8px;
   padding-bottom: 20px;
 }
 .prog-tl-item {
@@ -2808,16 +2808,18 @@ a, button {
 .prog-tl-card {
   flex: 1;
   margin-left: 20px;
-  padding: 14px 24px 28px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
+  padding: 18px 24px 24px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   transition: all 0.2s;
+  border-left: 3px solid rgba(0,232,122,0.3);
 }
 .prog-tl-card:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.045);
+  border-color: rgba(255,255,255,0.12);
+  border-left-color: var(--color-green);
 }
 .prog-tl-time {
   display: inline-block;
