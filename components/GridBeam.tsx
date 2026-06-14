@@ -59,22 +59,6 @@ export const GridBeam: React.FC<{ children: React.ReactNode; className?: string 
     <Beam style={{ left: '35%', top: '28%' }} delay={3} />
     <Beam style={{ left: '85%', top: '18%' }} delay={5.5} />
     <Beam style={{ left: '50%', top: '50%' }} delay={8} />
-    <Beam style={{ left: '18%', top: '32%' }} delay={2} />
-    <Beam style={{ left: '72%', top: '48%' }} delay={4.5} />
-    <Beam style={{ left: '40%', top: '92%' }} delay={7} />
-    <Beam style={{ left: '95%', top: '72%' }} delay={9.5} />
-    <Beam style={{ left: '8%', top: '65%' }} delay={1.2} />
-    <Beam style={{ left: '58%', top: '85%' }} delay={3.8} />
-    <Beam style={{ left: '28%', top: '15%' }} delay={6.2} />
-    <Beam style={{ left: '82%', top: '90%' }} delay={8.8} />
-    <Beam style={{ left: '45%', top: '42%' }} delay={0.8} />
-    <Beam style={{ left: '65%', top: '58%' }} delay={3.2} />
-    <Beam style={{ left: '12%', top: '78%' }} delay={5.8} />
-    <Beam style={{ left: '88%', top: '30%' }} delay={8.2} />
-    <Beam style={{ left: '38%', top: '62%' }} delay={1.8} />
-    <Beam style={{ left: '70%', top: '10%' }} delay={4.2} />
-    <Beam style={{ left: '25%', top: '95%' }} delay={6.8} />
-    <Beam style={{ left: '52%', top: '25%' }} delay={9.2} />
     {children}
   </div>
 );
