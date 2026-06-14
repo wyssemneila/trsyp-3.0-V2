@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { useAuth } from './AuthContext';
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
@@ -14,6 +15,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
+  const { isRegistered } = useAuth();
 
   return (
     <>
@@ -37,9 +39,19 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <button className="navbar-register" onClick={() => setShowRegister(true)}>
-          Register Now
-        </button>
+        {isRegistered ? (
+          <a className="navbar-dashboard" href="/dashboard">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            My Dashboard
+          </a>
+        ) : (
+          <button className="navbar-register" onClick={() => setShowRegister(true)}>
+            Register Now
+          </button>
+        )}
 
         <button
           className="navbar-hamburger"
@@ -58,15 +70,21 @@ export default function Navbar() {
             {l.label}
           </a>
         ))}
-        <button
-          className="navbar-mobile-register"
-          onClick={() => { setOpen(false); setShowRegister(true); }}
-        >
-          Register Now
-        </button>
+        {isRegistered ? (
+          <a className="navbar-mobile-register navbar-mobile-dashboard" href="/dashboard" onClick={() => setOpen(false)}>
+            My Dashboard
+          </a>
+        ) : (
+          <button
+            className="navbar-mobile-register"
+            onClick={() => { setOpen(false); setShowRegister(true); }}
+          >
+            Register Now
+          </button>
+        )}
       </div>
 
-      {showRegister && (
+      {showRegister && !isRegistered && (
         <div className="reg-overlay" onClick={() => setShowRegister(false)}>
           <div className="reg-popup" onClick={(e) => e.stopPropagation()}>
             <button className="reg-close" onClick={() => setShowRegister(false)} aria-label="Close">
