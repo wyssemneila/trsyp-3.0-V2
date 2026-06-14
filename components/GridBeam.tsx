@@ -4,12 +4,45 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 
+const DOTS = [
+  { x: '5%',  y: '8%',  size: 3, color: 'rgba(0,232,122,0.5)',  dur: 14, dx: 30,  dy: -20 },
+  { x: '12%', y: '25%', size: 2, color: 'rgba(255,29,120,0.4)', dur: 18, dx: -15, dy: 25 },
+  { x: '20%', y: '55%', size: 2.5, color: 'rgba(0,232,122,0.35)', dur: 22, dx: 20, dy: -35 },
+  { x: '8%',  y: '75%', size: 1.5, color: 'rgba(255,29,120,0.3)', dur: 16, dx: -25, dy: 15 },
+  { x: '15%', y: '90%', size: 2, color: 'rgba(0,232,122,0.3)',  dur: 20, dx: 18,  dy: -22 },
+  { x: '30%', y: '12%', size: 2, color: 'rgba(255,29,120,0.35)', dur: 19, dx: -12, dy: 30 },
+  { x: '35%', y: '40%', size: 3, color: 'rgba(0,232,122,0.4)',  dur: 15, dx: 22,  dy: -18 },
+  { x: '28%', y: '65%', size: 1.5, color: 'rgba(255,29,120,0.3)', dur: 21, dx: -20, dy: 28 },
+  { x: '40%', y: '85%', size: 2.5, color: 'rgba(0,232,122,0.35)', dur: 17, dx: 15, dy: -25 },
+  { x: '50%', y: '5%',  size: 2, color: 'rgba(255,29,120,0.4)', dur: 23, dx: -18, dy: 20 },
+  { x: '55%', y: '30%', size: 1.5, color: 'rgba(0,232,122,0.3)', dur: 16, dx: 25, dy: -15 },
+  { x: '48%', y: '50%', size: 3, color: 'rgba(255,29,120,0.35)', dur: 20, dx: -22, dy: 32 },
+  { x: '60%', y: '70%', size: 2, color: 'rgba(0,232,122,0.4)',  dur: 18, dx: 12,  dy: -28 },
+  { x: '52%', y: '92%', size: 2.5, color: 'rgba(255,29,120,0.3)', dur: 14, dx: -15, dy: 18 },
+  { x: '70%', y: '15%', size: 2, color: 'rgba(0,232,122,0.35)', dur: 21, dx: 20,  dy: -22 },
+  { x: '75%', y: '38%', size: 1.5, color: 'rgba(255,29,120,0.4)', dur: 17, dx: -28, dy: 15 },
+  { x: '68%', y: '60%', size: 3, color: 'rgba(0,232,122,0.3)',  dur: 19, dx: 18,  dy: -30 },
+  { x: '80%', y: '80%', size: 2, color: 'rgba(255,29,120,0.35)', dur: 22, dx: -12, dy: 22 },
+  { x: '88%', y: '10%', size: 2.5, color: 'rgba(0,232,122,0.4)', dur: 15, dx: -20, dy: 25 },
+  { x: '92%', y: '45%', size: 2, color: 'rgba(255,29,120,0.3)', dur: 20, dx: 15,  dy: -18 },
+];
+
 export const GridBeam: React.FC<{ children: React.ReactNode; className?: string }> = ({
   children,
   className,
 }) => (
   <div className={cn('gridbeam-wrap', className)}>
     <div className="gridbeam-grid" aria-hidden="true" />
+    {DOTS.map((d, i) => (
+      <motion.span
+        key={i}
+        className="gridbeam-dot"
+        style={{ left: d.x, top: d.y, width: d.size, height: d.size, background: d.color }}
+        animate={{ x: [0, d.dx, 0], y: [0, d.dy, 0], opacity: [0.4, 1, 0.4] }}
+        transition={{ duration: d.dur, repeat: Infinity, ease: 'easeInOut' }}
+        aria-hidden="true"
+      />
+    ))}
     <Beam style={{ left: '15%', top: '12%' }} delay={0} />
     <Beam style={{ left: '55%', top: '35%' }} delay={2.5} />
     <Beam style={{ left: '80%', top: '60%' }} delay={5} />

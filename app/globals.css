@@ -55,6 +55,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   opacity: 0.35;
 }
 
+.gridbeam-dot {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(0.5px);
+  box-shadow: 0 0 6px currentColor;
+}
+
 .gridbeam-wrap > main,
 .gridbeam-wrap > footer {
   position: relative;
@@ -2873,14 +2882,24 @@ a, button {
   align-items: center;
   gap: 5px;
   font-size: 12px;
-  color: rgba(0,232,122,0.7);
   font-family: var(--font-body);
 }
 .prog-tl-meta-item svg {
   width: 13px;
   height: 13px;
   flex-shrink: 0;
+}
+.prog-tl-meta-item:first-child {
+  color: rgba(0,232,122,0.7);
+}
+.prog-tl-meta-item:first-child svg {
   stroke: rgba(0,232,122,0.6);
+}
+.prog-tl-meta-item:last-child {
+  color: rgba(255,29,120,0.7);
+}
+.prog-tl-meta-item:last-child svg {
+  stroke: rgba(255,29,120,0.6);
 }
 
 /* ──── CTA ──── */
